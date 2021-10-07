@@ -11,7 +11,7 @@ export default function Produto(props) {
                 pathname: '/detalhe',
                 state: props.info
             }}>
-                <button> Ver Detalhes </button>
+                <button className="botao1"> Ver Detalhes </button>
             </Link>
         </Container>
     );
