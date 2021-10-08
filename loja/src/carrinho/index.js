@@ -3,8 +3,6 @@ import { Container } from './styled';
 import { useEffect, useState } from 'react';
 import Cookie from 'js-cookie';
 import Itens from './carrinho-item/index';
-import Cookies from 'js-cookie';
-
 
 export default function Carrinho() {
     const [produtos, setProdutos] = useState([]);
@@ -12,7 +10,7 @@ export default function Carrinho() {
     useEffect(carregar, []);
 
     function carregar() {
-        let carrinho = Cookie.set('carrinho');
+        let carrinho = Cookie.get('carrinho');
         carrinho = carrinho !== undefined 
             ? JSON.parse(carrinho)
             : [];
@@ -28,7 +26,7 @@ export default function Carrinho() {
     function alterarProduto(id, qtd) {
         let alterar = produtos.filter(item => item.id === id)[0];
         alterar.qtd = qtd;
-        Cookies.set('carrinho', JSON.stringify(produtos));
+        Cookie.set('carrinho', JSON.stringify(produtos));
     }
 
     return (
@@ -41,7 +39,7 @@ export default function Carrinho() {
                         info={item}
                         update={alterarProduto}
                         remove={removerProduto}
-                        />  
+                    />  
                 )}
             </div>
         </Container>

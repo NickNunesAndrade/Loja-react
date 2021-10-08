@@ -12,8 +12,9 @@ export default function Detalhes(props) {
         carrinho = carrinho !== undefined 
             ? JSON.parse(carrinho)
             : [];
-        if(carrinho.some(item => item.id === produto.id) === false)
-            carrinho.push({...produto, qtd: 1});
+        if(carrinho.some(item => item.id === produto.id) === false) {
+            carrinho.push( {...produto, qtd: 1} );
+        }
         Cookie.set('carrinho', JSON.stringify(carrinho));
         navigation.push('/carrinho');    
     }
@@ -35,7 +36,7 @@ export default function Detalhes(props) {
                 <div> {produto.descricao} </div>
                 <h2>Especificaçoes</h2>
                 <div> {produto.especificacoes} </div>
-                <div> <button onClick={comprarItens}>Comprar</button></div>
+                <div className="botao"> <button onClick={comprarItens}>Comprar</button></div>
             </div>
         </Container>
     );

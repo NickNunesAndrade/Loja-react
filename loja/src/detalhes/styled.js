@@ -29,10 +29,15 @@ const Container = styled.div `
         border: none;
         outline: none;
         padding: .5em 1.5em;
-        font: 400 1em Roboto;
-        background-color: #f837b2;
+        font: 500 1em Roboto;
+        background-color: rgb(8, 0, 225);
         color:  white;
         cursor: pointer;
+    }
+
+    .botao button:hover {
+        transition: 0.5s;
+        background-color: #0861e1;
     }
 
     img {

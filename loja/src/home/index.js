@@ -47,7 +47,7 @@ export default function Inicio() {
         <Container>
             <h1> Bem-Vindos ! </h1>
             <br />
-            <button onClick={listar}> Listar </button>
+            <div className="botao"><button onClick={listar}> Listar </button></div>
             <br />
             <div className="lista-produtos">
                 {produtos.map(item => 
